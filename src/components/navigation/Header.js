@@ -1,6 +1,8 @@
 
 const Header = () => {
-    return <div></div>;
+    return <div>
+        <h1>testing header</h1>
+    </div>;
 }
 
 

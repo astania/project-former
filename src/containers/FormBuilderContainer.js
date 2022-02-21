@@ -1,6 +1,8 @@
 
 const FormBuilderContainer = () => {
-    return <div></div>;
+    return <div>
+        <p>form builder container</p>
+    </div>;
 }
 
 
