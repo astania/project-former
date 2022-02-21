@@ -3,7 +3,14 @@ import { useState } from "react";
 const Form = ({ form }) => {
     const questions = form.questions
 
-    const blankSubmission = ""
+    const blankSubmission = {
+        "name": "",
+        "questions": [{
+            "type": "",
+            "prompt": "",
+            "response": ""
+        }]
+    }
 
     const [formResponses, setFormResponses] = useState(blankSubmission)
 
@@ -24,11 +31,11 @@ const Form = ({ form }) => {
             <h1>{form.name}</h1>
             <form onSubmit={handleSubmit}>
                 {questions.map(question => { 
+                    
                     return (
-                        <label>
+                        <label key={question.id}>
                             {question.prompt}
                             <input
-                                key={question.id}
                                 value={question.response}
                                 onChange={handleChange}
                             ></input>
@@ -36,7 +43,7 @@ const Form = ({ form }) => {
                     )
                 })
             }
-            <button type={submit}>Submit</button>
+            <button type="submit">Submit</button>
 
             </form>
         </div>
