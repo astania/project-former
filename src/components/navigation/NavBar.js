@@ -4,11 +4,16 @@ const style = {
     width: "60%",
     margin: "5% 0 1%",
     padding: "1em",
+    textDecoration: "none",
+    color: "white",
+    backgroundColor: "black",
+    fontWeight: "bold",
+    verticalAlign: "center"
 }
 
 const activeStyle = {
     fontWeight: "bolder",
-    color: "red"
+    color: "#0892d0"
 }
 
 function NavBar() {
@@ -25,21 +30,23 @@ function NavBar() {
             <NavLink
                 activeStyle={activeStyle}
                 style={style}
-                to="/"
+                exact
+                to="/forms/new"
             >
                 Build a Form
             </NavLink>
             <NavLink
                 activeStyle={activeStyle}
                 style={style}
-                to="/"
+                exact
+                to="/forms"
             >
-                View Form
+                View Forms
             </NavLink>
             <NavLink
                 activeStyle={activeStyle}
                 style={style}
-                to="/"
+                to="/submissions"
             >
                 Submissions
             </NavLink>
