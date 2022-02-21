@@ -1,6 +1,10 @@
 
-const FormViewerContainer = () => {
-    return <div></div>;
+const FormViewerContainer = ({ forms }) => {
+    return (
+    <div>
+        {forms.map(form => <FormCard />)}
+    </div>
+    );
 }
 
 

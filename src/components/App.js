@@ -1,4 +1,5 @@
 import './App.css';
+import {useState, useEffect} from "react"
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import NavBar from './navigation/NavBar';
 import Header from './navigation/Header';
@@ -11,6 +12,14 @@ import Form from './forms/Form';
 
 
 function App() {
+  const [forms, setForms] = useState([])
+
+  useEffect(() => {
+    fetch("http://localhost:3001/forms")
+      .then(r => r.json())
+      .then(fetchedQuestions => setForms(fetchedQuestions))
+  }, [])
+  
   return (
     <div className="App">
       <Router>
@@ -23,7 +32,7 @@ function App() {
           </Route>
 
           <Route path="/forms">
-            <FormViewerContainer />
+            <FormViewerContainer forms={forms}/>
           </Route>
 
           <Route path="/forms/:id">
