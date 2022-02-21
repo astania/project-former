@@ -14,10 +14,15 @@ const Form = ({ form }) => {
         console.log(formResponses)
     }
 
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        console.log(event.target.value)
+    }
+
     return (
         <div>
             <h1>{form.name}</h1>
-            <form>
+            <form onSubmit={handleSubmit}>
                 {questions.map(question => { 
                     return (
                         <label>
@@ -31,6 +36,7 @@ const Form = ({ form }) => {
                     )
                 })
             }
+            <button type={submit}>Submit</button>
 
             </form>
         </div>
