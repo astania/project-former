@@ -6,7 +6,7 @@ const Form = ({ form }) => {
     const blankSubmission = ""
 
     const [formResponses, setFormResponses] = useState(blankSubmission)
-  
+
 
     const handleChange = (event) => {
         console.log(event.target.value)
@@ -18,18 +18,22 @@ const Form = ({ form }) => {
         <div>
             <h1>{form.name}</h1>
             <form>
-                {questions.map(question => {
+                {questions.map(question => { 
                     return (
                         <label>
                             {question.prompt}
+                            <input
+                                key={question.id}
                                 value={question.response}
                                 onChange={handleChange}
                             ></input>
                         </label>
                     )
-                })}
+                })
+            }
+
             </form>
-        </div >
+        </div>
     );
 }
 

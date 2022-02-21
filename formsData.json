@@ -7,17 +7,17 @@
                 "id": 1,
                 "type": "text",
                 "prompt": "what is your favorite color?",
-                "response": "Orange" 
+                "response": ""
             }, {
                 "id": 2,
                 "type": "text",
                 "prompt": "what are you studying?",
-                "response": "Software engineering and business" 
+                "response": "" 
             }, {
                 "id": 3,
                 "type": "text",
                 "prompt": "what is 2 * 2?",
-                "response": "4" 
+                "response": "" 
             }
         ]
             

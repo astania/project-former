@@ -8,4 +8,24 @@
   
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  font-size: 1em;
+}
+
+input,
+select {
+  border: 3px solid black;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem 0 1rem;
+  font-size: 1rem;
+}
 
