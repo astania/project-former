@@ -3,21 +3,27 @@ import { useState } from "react";
 const Form = ({ form }) => {
     const questions = form.questions
 
-    const blankSubmission = {
-        "name": "",
-        "questions": [{
-            "type": "",
-            "prompt": "",
-            "response": ""
-        }]
+    const blankSubmission = () => {
+        const submissions = questions.map(question => {
+            return( [{
+                id: question.id,
+                type: question.type,
+                prompt: question.prompt,
+                response: ""
+            }])
+        })
+        return submissions
     }
+    console.log(blankSubmission())
 
     const [formResponses, setFormResponses] = useState(blankSubmission)
 
 
     const handleChange = (event) => {
         console.log(event.target.value)
-        setFormResponses(event.target.value)
+        setFormResponses(() => {
+        
+        })
         console.log(formResponses)
     }
 
@@ -25,6 +31,8 @@ const Form = ({ form }) => {
         event.preventDefault()
         console.log(event.target.value)
     }
+
+    
 
     return (
         <div>
@@ -36,7 +44,7 @@ const Form = ({ form }) => {
                         <label key={question.id}>
                             {question.prompt}
                             <input
-                                value={question.response}
+                                value={blankSubmission.}
                                 onChange={handleChange}
                             ></input>
                         </label>

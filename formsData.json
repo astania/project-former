@@ -35,8 +35,9 @@
                 "type": "text",
                 "prompt": "what is your favorite color?",
                 "response": "orange"
-            },
+            }]
         }
 
     ]
+
 }

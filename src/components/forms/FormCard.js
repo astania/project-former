@@ -5,7 +5,7 @@ const FormCard = ({form}) => {
     const [selectedForm, setSelectedForm] = useState(false)
 
     const handleSelectForm = () => {
-        console.log(form)
+        // console.log(form)
         setSelectedForm(!selectedForm)
     }
 
