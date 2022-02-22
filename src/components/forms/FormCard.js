@@ -15,7 +15,7 @@ const FormCard = ({form}) => {
     <div>
         <h4>{form.name}</h4>
         <h6>This form has {form.questions.length} questions</h6>
-        <button onClick={handleSelectForm}>select this form</button>
+        <button onClick={handleSelectForm}>{selectedForm ? "un-select" : "select"}</button>
     </div>
     <div>{selectedForm ? <Form form={form}/> : null}</div>
     </> 

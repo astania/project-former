@@ -21,15 +21,17 @@ const Form = ({ form }) => {
 
     const handleChange = (event) => {
         console.log(event.target.value)
-        setFormResponses(() => {
-        
-        })
-        console.log(formResponses)
+        console.log(event.target.nodeName)
+        // setFormResponses(() => {
+        //     blankSubmission().filter(question => {
+        //         question.prompt === })
+        // })
+        // console.log(formResponses)
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        console.log(event.target.value)
+        console.log(event.target)
     }
 
     
@@ -44,7 +46,7 @@ const Form = ({ form }) => {
                         <label key={question.id}>
                             {question.prompt}
                             <input
-                                value={blankSubmission.}
+                                value={blankSubmission().response}
                                 onChange={handleChange}
                             ></input>
                         </label>
