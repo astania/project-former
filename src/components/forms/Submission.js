@@ -13,7 +13,7 @@ function Submission({ sub, submissionsForThisForm }) {
     return (
         <div>
             <p><b>Submission #{responseNumber}</b></p>
-            {elementsToDisplay.map(element => <SubmissionResponse element={element} />)}
+            {elementsToDisplay.map(element => <SubmissionResponse element={element} key={uuidv4()}/>)}
         </div>
     )
 }
