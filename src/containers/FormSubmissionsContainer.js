@@ -1,8 +1,8 @@
 import FormSubmissions from "../components/forms/FormSubmissions";
 
-const FormSubmissionsContainer = ({ submissions }) => {
+const FormSubmissionsContainer = ({ submissions, forms }) => {
     return (<div>
-        {submissions.forEach(submission =>  )}
+        {forms.map(form => <FormSubmissions formName={form.name} submissions={submissions}/> )}
     </div>)
 }
 

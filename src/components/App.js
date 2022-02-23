@@ -53,7 +53,7 @@ function App() {
           </Route> */}
 
           <Route path="/submissions">
-            <FormSubmissionsContainer submissions={submissions} />
+            <FormSubmissionsContainer submissions={submissions} forms={forms} />
           </Route>
 
           <Route exact path="/">
