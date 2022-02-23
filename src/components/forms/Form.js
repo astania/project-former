@@ -1,37 +1,42 @@
 import { useState } from "react";
 
+//job tracker association
+
 const Form = ({ form }) => {
     const questions = form.questions
 
     const blankSubmission = () => {
-        const submissions = questions.map(question => {
-            return( [{
+        const submissionsArray = []
+        questions.map(question => {
+            return( submissionsArray.push( {
                 id: question.id,
                 type: question.type,
                 prompt: question.prompt,
                 response: ""
-            }])
+            })
+               )
         })
-        return submissions
+        return submissionsArray
     }
     console.log(blankSubmission())
 
     const [formResponses, setFormResponses] = useState(blankSubmission)
 
 
-    const handleChange = (event) => {
-        console.log(event.target.value)
-        console.log(event.target.nodeName)
-        // setFormResponses(() => {
-        //     blankSubmission().filter(question => {
-        //         question.prompt === })
-        // })
-        // console.log(formResponses)
+    const handleChange = (e, prompt, index) => {
+        console.log(e.target.value)
+        console.log(prompt, index)
+        
+        console.log("testing:", formResponses[index].response)
+        const updatedResponse = formResponses[index].response
+
+        setFormResponses({...formResponses, updatedResponse: e.target.value})
+        console.log(formResponses)
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault()
-        console.log(event.target)
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        
     }
 
     
@@ -40,14 +45,14 @@ const Form = ({ form }) => {
         <div>
             <h1>{form.name}</h1>
             <form onSubmit={handleSubmit}>
-                {questions.map(question => { 
+                {questions.map((question, index) => { 
                     
                     return (
                         <label key={question.id}>
                             {question.prompt}
                             <input
                                 value={blankSubmission().response}
-                                onChange={handleChange}
+                                onChange={(e) => handleChange(e, question.prompt, index)}
                             ></input>
                         </label>
                     )
