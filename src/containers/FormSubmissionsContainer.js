@@ -1,6 +1,9 @@
+import FormSubmissions from "../components/forms/FormSubmissions";
 
-const FormSubmissionsContainer = () => {
-    return <div></div>;
+const FormSubmissionsContainer = ({ submissions }) => {
+    return (<div>
+        {submissions.forEach(submission =>  )}
+    </div>)
 }
 
 

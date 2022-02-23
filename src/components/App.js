@@ -8,7 +8,7 @@ import FormBuilderContainer from '../containers/FormBuilderContainer';
 import FormViewerContainer from '../containers/FormViewerContainer';
 import HomePageContainer from '../containers/HomePageContainer';
 import FormSubmissionsContainer from '../containers/FormSubmissionsContainer';
-import Form from './forms/Form';
+// import Form from './forms/Form';
 
 
 function App() {
@@ -48,9 +48,9 @@ function App() {
             <FormViewerContainer forms={forms} onNewSubmissions={handleNewSubmissions} />
           </Route>
 
-          <Route path="/forms/:id">
+          {/* <Route path="/forms/:id">
             <Form />
-          </Route>
+          </Route> */}
 
           <Route path="/submissions">
             <FormSubmissionsContainer submissions={submissions} />
