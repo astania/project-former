@@ -2,7 +2,7 @@
 const SubmissionResponse = ({element}) => {
     return (
         <div>
-            <p><b>{element.prompt}:</b> {element.response}</p>
+            <h6><b>{element.prompt}:</b> {element.response}</h6>
         </div>);
 }
 

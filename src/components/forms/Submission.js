@@ -12,7 +12,7 @@ function Submission({ sub, submissionsForThisForm }) {
 
     return (
         <div>
-            <h6>Submission #{responseNumber}</h6>
+            <p><b>Submission #{responseNumber}</b></p>
             {elementsToDisplay.map(element => <SubmissionResponse element={element} />)}
         </div>
     )
