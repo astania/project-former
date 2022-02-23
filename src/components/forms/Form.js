@@ -5,7 +5,7 @@ import { useState } from "react";
 const Form = ({ form, onNewSubmissions }) => {
     const questions = form.questions
     const formName = form.name
-    console.log("This is the form info", form)
+    // console.log("This is the form info", form)
 
     const blankSubmission = () => {
         const submissionsArray = [{formName: formName}]
@@ -19,9 +19,10 @@ const Form = ({ form, onNewSubmissions }) => {
         })
         return submissionsArray
     }
-    console.log(blankSubmission())
 
-    const [formResponses, setFormResponses] = useState(blankSubmission)
+
+    const [formResponses, setFormResponses] = useState(blankSubmission())
+
 
 
     const handleChange = (e, prompt, index) => {
@@ -38,7 +39,7 @@ const Form = ({ form, onNewSubmissions }) => {
         })
 
         setFormResponses(() => updatedResponse)
-        console.log(formResponses)
+        // console.log(formResponses)
      
     }
 
@@ -55,8 +56,9 @@ const Form = ({ form, onNewSubmissions }) => {
             .then(r => r.json())
             .then(newSubmission => onNewSubmissions(newSubmission))
 
-    }
+        setFormResponses([...blankSubmission()])
 
+    }
 
     return (
         <div>

@@ -1,5 +1,5 @@
 import './App.css';
-import {useState, useEffect} from "react"
+import { useState, useEffect } from "react"
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import NavBar from './navigation/NavBar';
 import Header from './navigation/Header';
@@ -28,15 +28,15 @@ function App() {
   }, [])
 
   const handleNewSubmissions = (newSubmission) => {
-      setSubmissions([...submissions, newSubmission])
+    setSubmissions(...submissions, newSubmission)
   }
-  
-  console.log(submissions)
-  
+
+  console.log("All submissions:", submissions)
+
   return (
     <div className="App">
       <Router>
-        <Header slogan="Build Forms, Collect Responses" storeName="Project Former"/>
+        <Header slogan="Build Forms, Collect Responses" storeName="Project Former" />
         <NavBar />
 
         <Switch>
@@ -45,15 +45,15 @@ function App() {
           </Route>
 
           <Route path="/forms">
-            <FormViewerContainer forms={forms} />
+            <FormViewerContainer forms={forms} onNewSubmissions={handleNewSubmissions} />
           </Route>
 
           <Route path="/forms/:id">
-            <Form onNewSubmissions={handleNewSubmissions}/>
+            <Form />
           </Route>
 
           <Route path="/submissions">
-            <FormSubmissionsContainer submissions={submissions}/>
+            <FormSubmissionsContainer submissions={submissions} />
           </Route>
 
           <Route exact path="/">
@@ -63,7 +63,7 @@ function App() {
         </Switch>
       </Router>
 
-    <Footer />
+      <Footer />
     </div>
   );
 }
