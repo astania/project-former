@@ -1,21 +1,19 @@
 import { v4 as uuidv4 } from 'uuid'
+import SubmissionResponse from './SubmissionResponse'
 
 function Submission({ sub, submissionsForThisForm }) {
-    console.log("this is the sub:", sub)
+    // console.log("this is the sub:", sub)
 
     const responseNumber = submissionsForThisForm.indexOf(sub) + 1
+
+    //remove first form name element from sub array
+    const elementsToDisplay = sub.filter(entry => sub.indexOf(entry) > 0)
+    
 
     return (
         <div>
             <h6>Submission #{responseNumber}</h6>
-            {submissionsForThisForm.map(submission => { console.log(submission.length)
-               //start at 1 to skip the first element in the array, which is always the form name
-               for(let i = 1; i < submission.length; i++){
-                   return (
-                       <p><b>{submission[i].prompt}:</b> {submission[i].response}</p>
-                   )
-               }
-            })}
+            {elementsToDisplay.map(element => <SubmissionResponse element={element} />)}
         </div>
     )
 }
