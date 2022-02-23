@@ -2,19 +2,20 @@ import { useState } from "react";
 
 //job tracker association
 
-const Form = ({ form }) => {
+const Form = ({ form, onNewSubmissions }) => {
     const questions = form.questions
+    const formName = form.name
+    console.log("This is the form info", form)
 
     const blankSubmission = () => {
-        const submissionsArray = []
+        const submissionsArray = [{formName: formName}]
         questions.map(question => {
-            return( submissionsArray.push( {
+            submissionsArray.push( {
                 id: question.id,
                 type: question.type,
                 prompt: question.prompt,
                 response: ""
             })
-               )
         })
         return submissionsArray
     }
@@ -24,29 +25,44 @@ const Form = ({ form }) => {
 
 
     const handleChange = (e, prompt, index) => {
-        console.log(e.target.value)
-        console.log(prompt, index)
+        // console.log(e.target.value)
+        // console.log(prompt, index)
+        const input = e.target.value
         
-        console.log("testing:", formResponses[index].response)
-        const updatedResponse = formResponses[index].response
+        
+        const updatedResponse = formResponses.map(question => {
+            if(question.prompt === prompt){
+                return {...question, response: input}
+            }
+            return question
+        })
 
-        setFormResponses({...formResponses, updatedResponse: e.target.value})
+        setFormResponses(() => updatedResponse)
         console.log(formResponses)
+     
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        
+
+        fetch("http://localhost:3001/submissions", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formResponses),
+        })
+            .then(r => r.json())
+            .then(newSubmission => onNewSubmissions(newSubmission))
+
     }
 
-    
 
     return (
         <div>
             <h1>{form.name}</h1>
             <form onSubmit={handleSubmit}>
-                {questions.map((question, index) => { 
-                    
+                {questions.map((question, index) => {
                     return (
                         <label key={question.id}>
                             {question.prompt}

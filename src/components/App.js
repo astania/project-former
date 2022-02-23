@@ -13,12 +13,25 @@ import Form from './forms/Form';
 
 function App() {
   const [forms, setForms] = useState([])
+  const [submissions, setSubmissions] = useState([])
 
   useEffect(() => {
     fetch("http://localhost:3001/forms")
       .then(r => r.json())
       .then(fetchedQuestions => setForms(fetchedQuestions))
   }, [])
+
+  useEffect(() => {
+    fetch("http://localhost:3001/submissions")
+      .then(r => r.json())
+      .then(fetchedSubmissions => setSubmissions(fetchedSubmissions))
+  }, [])
+
+  const handleNewSubmissions = (newSubmission) => {
+      setSubmissions([...submissions, newSubmission])
+  }
+  
+  console.log(submissions)
   
   return (
     <div className="App">
@@ -32,15 +45,15 @@ function App() {
           </Route>
 
           <Route path="/forms">
-            <FormViewerContainer forms={forms}/>
+            <FormViewerContainer forms={forms} />
           </Route>
 
           <Route path="/forms/:id">
-            <Form />
+            <Form onNewSubmissions={handleNewSubmissions}/>
           </Route>
 
           <Route path="/submissions">
-            <FormSubmissionsContainer />
+            <FormSubmissionsContainer submissions={submissions}/>
           </Route>
 
           <Route exact path="/">
