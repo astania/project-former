@@ -1,8 +1,8 @@
 
-function Submission ({submission}){
+function Submission ({sub}){
 return (
     <div>
-        <h6>{submission[0]}</h6>
+        <h6>{sub[0].formName}</h6>
     </div>
 )
 }

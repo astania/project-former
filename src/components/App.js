@@ -31,7 +31,7 @@ function App() {
     setSubmissions(...submissions, newSubmission)
   }
 
-  console.log("All submissions:", submissions)
+  // console.log("All submissions:", submissions)
 
   return (
     <div className="App">
