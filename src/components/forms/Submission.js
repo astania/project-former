@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from 'uuid'
 
 function Submission({ sub, submissionsForThisForm }) {
+    console.log("this is the sub:", sub)
 
     const responseNumber = submissionsForThisForm.indexOf(sub) + 1
 
@@ -11,7 +12,7 @@ function Submission({ sub, submissionsForThisForm }) {
                //start at 1 to skip the first element in the array, which is always the form name
                for(let i = 1; i < submission.length; i++){
                    return (
-                       <p>{submission[i].prompt}</p>
+                       <p><b>{submission[i].prompt}:</b> {submission[i].response}</p>
                    )
                }
             })}
