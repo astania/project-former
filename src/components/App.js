@@ -6,9 +6,9 @@ import Header from './navigation/Header';
 import Footer from './navigation/Footer';
 import FormBuilderContainer from '../containers/FormBuilderContainer';
 import FormViewerContainer from '../containers/FormViewerContainer';
-import HomePageContainer from '../containers/HomePageContainer';
+import HomePage from './HomePage'
 import FormSubmissionsContainer from '../containers/FormSubmissionsContainer';
-// import Form from './forms/Form';
+
 
 
 function App() {
@@ -57,7 +57,7 @@ function App() {
           </Route>
 
           <Route exact path="/">
-            <HomePageContainer />
+            <HomePage />
           </Route>
 
         </Switch>
