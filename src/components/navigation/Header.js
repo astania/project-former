@@ -1,8 +1,8 @@
 
 const Header = ({slogan, storeName}) => {
-    return <div>
+    return <div className="header">
         <h1>{storeName}</h1>
-        <h3>{slogan}</h3>
+        <h4><em>{slogan}</em></h4>
     </div>;
 }
 

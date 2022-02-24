@@ -33,7 +33,7 @@ function NavBar() {
                 exact
                 to="/forms/new"
             >
-                Build a Form
+                Build
             </NavLink>
             <NavLink
                 activeStyle={activeStyle}
@@ -41,7 +41,7 @@ function NavBar() {
                 exact
                 to="/forms"
             >
-                View Forms
+                Forms
             </NavLink>
             <NavLink
                 activeStyle={activeStyle}
