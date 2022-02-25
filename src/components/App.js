@@ -36,7 +36,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Header slogan="Build Forms, Collect Responses" storeName="Project Former" />
+        <Header />
         <NavBar />
 
         <Switch>
