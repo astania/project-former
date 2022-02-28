@@ -1,43 +1,62 @@
+import { useState } from "react"
+import Question from "../components/form builders/Question"
 
-const FormBuilderContainer = () => {
-    import { useState } from "react"
+const FormBuilderContainer = ({ forms, setForms }) => {
+
 
     const blankFormTemplate = {
         name: "",
-        questions: [
-            {
-                type: "text",
-                prompt: "",
-            }
-        ]
-    
+        questions: []
     }
 
-    const [formQuestions, setFormQuestions] = useState([blankFormTemplate])
+    const [newForm, setNewForm] = useState([blankFormTemplate])
+
+    console.log(newForm)
+
+    const handleChange = (e) => {
+        e.preventDefault()
+        console.log(e.target.value)
+        setNewForm({ ...blankFormTemplate, name: e.target.value })
+    }
+
+    const addTextQuestion = (e) => {
+        e.preventDefault()
+        console.log(e.target)
+        blankFormTemplate.questions.push( {
+            type: "text",
+            prompt: "",
+        })
+        return(
+            <Question />
+        )
+    }
 
     return <div>
 
-<h1>{form.name}</h1>
-            <form onSubmit={handleSubmit}>
-                {questions.map((question, index) => {
-                    return (
-                        <label key={question.id}>
-                            {question.prompt}
-                            <input
-                                value={blankSubmission().response}
-                                onChange={(e) => handleChange(e, question.prompt, index)}
-                            ></input>
-                        </label>
-                    )
-                })
-            }
-            <button type="submit">Submit</button>
+        <h1>Build Your Form</h1>
+        <form
+        // onSubmit={handleSubmit}
+        >
 
-            </form>
+            <label>
+                Form Name:
+                <input type="text"
+                    value={newForm.name}
+                    name="name"
+                    onChange={(e) => handleChange(e)}
+                ></input>
+            </label>
+           <button onClick={addTextQuestion}>Add a text question</button>
+           <button>Add a radio button question</button>
 
 
-        </div>;
+            <button type="submit">Save Form</button>
+
+        </form>
+
+
+    </div>;
 }
 
 
-        export default FormBuilderContainer;
+export default FormBuilderContainer;

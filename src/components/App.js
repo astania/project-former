@@ -41,7 +41,7 @@ function App() {
 
         <Switch>
           <Route path="/forms/new">
-            <FormBuilderContainer />
+            <FormBuilderContainer forms={forms} setForms={setForms}/>
           </Route>
 
           <Route path="/forms">
