@@ -25,29 +25,29 @@
       ]
     },
     {
-        "id": 1,
-        "name": "Second Form",
-        "questions": [
-          {
-            "id": 0,
-            "type": "text",
-            "prompt": "what is your favorite color?",
-            "response": ""
-          },
-          {
-            "id": 1,
-            "type": "text",
-            "prompt": "what are you studying?",
-            "response": ""
-          },
-          {
-            "id": 2,
-            "type": "text",
-            "prompt": "what is 2 * 2?",
-            "response": ""
-          }
-        ]
-      }
+      "id": 1,
+      "name": "Second Form",
+      "questions": [
+        {
+          "id": 0,
+          "type": "text",
+          "prompt": "what is your favorite color?",
+          "response": ""
+        },
+        {
+          "id": 1,
+          "type": "text",
+          "prompt": "what are you studying?",
+          "response": ""
+        },
+        {
+          "id": 2,
+          "type": "text",
+          "prompt": "what is 2 * 2?",
+          "response": ""
+        }
+      ]
+    }
   ],
   "submissions": [
     [
@@ -58,121 +58,6 @@
         "id": 0,
         "type": "text",
         "prompt": "what is your favorite color?",
-        "response": "pink"
-      },
-      {
-        "id": 1,
-        "type": "text",
-        "prompt": "what are you studying?",
-        "response": "stuff"
-      },
-      {
-        "id": 2,
-        "type": "text",
-        "prompt": "what is 2 * 2?",
-        "response": "99"
-      }
-    ],
-    [
-      {
-        "formName": "Test Form"
-      },
-      {
-        "id": 0,
-        "type": "text",
-        "prompt": "what is your favorite color?",
-        "response": "testing"
-      },
-      {
-        "id": 1,
-        "type": "text",
-        "prompt": "what are you studying?",
-        "response": "not sure"
-      },
-      {
-        "id": 2,
-        "type": "text",
-        "prompt": "what is 2 * 2?",
-        "response": "qanon"
-      }
-    ],
-    [
-      {
-        "formName": "Test Form"
-      },
-      {
-        "id": 0,
-        "type": "text",
-        "prompt": "what is your favorite color?",
-        "response": "does it blank"
-      },
-      {
-        "id": 1,
-        "type": "text",
-        "prompt": "what are you studying?",
-        "response": "as"
-      },
-      {
-        "id": 2,
-        "type": "text",
-        "prompt": "what is 2 * 2?",
-        "response": "4322"
-      }
-    ],
-    [
-      {
-        "formName": "Test Form"
-      },
-      {
-        "id": 0,
-        "type": "text",
-        "prompt": "what is your favorite color?",
-        "response": "blank"
-      },
-      {
-        "id": 1,
-        "type": "text",
-        "prompt": "what are you studying?",
-        "response": "blank"
-      },
-      {
-        "id": 2,
-        "type": "text",
-        "prompt": "what is 2 * 2?",
-        "response": "blank"
-      }
-    ],
-    [
-      {
-        "formName": "Test Form"
-      },
-      {
-        "id": 0,
-        "type": "text",
-        "prompt": "what is your favorite color?",
-        "response": "asdfasdf"
-      },
-      {
-        "id": 1,
-        "type": "text",
-        "prompt": "what are you studying?",
-        "response": "asdf"
-      },
-      {
-        "id": 2,
-        "type": "text",
-        "prompt": "what is 2 * 2?",
-        "response": "asdfadsf"
-      }
-    ],
-    [
-      {
-        "formName": "Test Form"
-      },
-      {
-        "id": 0,
-        "type": "text",
-        "prompt": "what is your favorite color?",
         "response": "test"
       },
       {
@@ -190,94 +75,48 @@
     ],
     [
       {
-        "formName": "Test Form"
+        "formName": "Second Form"
       },
       {
         "id": 0,
         "type": "text",
         "prompt": "what is your favorite color?",
-        "response": ""
+        "response": "wahoo"
       },
       {
         "id": 1,
         "type": "text",
         "prompt": "what are you studying?",
-        "response": ""
+        "response": "wahoo"
       },
       {
         "id": 2,
         "type": "text",
         "prompt": "what is 2 * 2?",
-        "response": ""
+        "response": "wahoo"
       }
     ],
     [
       {
-        "formName": "Test Form"
+        "formName": "Second Form"
       },
       {
         "id": 0,
         "type": "text",
         "prompt": "what is your favorite color?",
-        "response": "1"
+        "response": "wahoo"
       },
       {
         "id": 1,
         "type": "text",
         "prompt": "what are you studying?",
-        "response": "1"
+        "response": "wahoo"
       },
       {
         "id": 2,
         "type": "text",
         "prompt": "what is 2 * 2?",
-        "response": "1"
-      }
-    ],
-    [
-      {
-        "formName": "Test Form"
-      },
-      {
-        "id": 0,
-        "type": "text",
-        "prompt": "what is your favorite color?",
-        "response": "1"
-      },
-      {
-        "id": 1,
-        "type": "text",
-        "prompt": "what are you studying?",
-        "response": "1"
-      },
-      {
-        "id": 2,
-        "type": "text",
-        "prompt": "what is 2 * 2?",
-        "response": "1"
-      }
-    ],
-    [
-      {
-        "formName": "Test Form"
-      },
-      {
-        "id": 0,
-        "type": "text",
-        "prompt": "what is your favorite color?",
-        "response": "hope"
-      },
-      {
-        "id": 1,
-        "type": "text",
-        "prompt": "what are you studying?",
-        "response": "hope"
-      },
-      {
-        "id": 2,
-        "type": "text",
-        "prompt": "what is 2 * 2?",
-        "response": "hope"
+        "response": "wahoo"
       }
     ]
   ]

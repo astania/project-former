@@ -5,17 +5,16 @@ import { useState } from "react";
 const Form = ({ form, onNewSubmissions }) => {
     const questions = form.questions
     const formName = form.name
-    // console.log("This is the form info", form)
 
     const blankSubmission = () => {
         const submissionsArray = [{formName: formName}]
         questions.map(question => {
-            submissionsArray.push( {
+            return (submissionsArray.push( {
                 id: question.id,
                 type: question.type,
                 prompt: question.prompt,
                 response: ""
-            })
+            }))
         })
         return submissionsArray
     }
@@ -23,6 +22,7 @@ const Form = ({ form, onNewSubmissions }) => {
 
     const [formResponses, setFormResponses] = useState(blankSubmission())
 
+    console.log(formResponses)
 
 
     const handleChange = (e, prompt, index) => {
@@ -33,13 +33,14 @@ const Form = ({ form, onNewSubmissions }) => {
         
         const updatedResponse = formResponses.map(question => {
             if(question.prompt === prompt){
+                console.log(question.prompt)
                 return {...question, response: input}
             }
             return question
         })
 
         setFormResponses(() => updatedResponse)
-        // console.log(formResponses)
+        console.log("updated forms", formResponses)
      
     }
 
@@ -53,10 +54,10 @@ const Form = ({ form, onNewSubmissions }) => {
             },
             body: JSON.stringify(formResponses),
         })
-            .then(r => r.json())
+            .then(r => r.text())
             .then(newSubmission => onNewSubmissions(newSubmission))
 
-        setFormResponses([...blankSubmission()])
+        // setFormResponses([...blankSubmission()])
 
     }
 
