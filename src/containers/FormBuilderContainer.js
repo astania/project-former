@@ -9,26 +9,33 @@ const FormBuilderContainer = ({ forms, setForms }) => {
         questions: []
     }
 
-    const [newForm, setNewForm] = useState([blankFormTemplate])
+    const [newForm, setNewForm] = useState(blankFormTemplate)
 
     console.log(newForm)
 
     const handleChange = (e) => {
         e.preventDefault()
         console.log(e.target.value)
-        setNewForm({ ...blankFormTemplate, name: e.target.value })
+        setNewForm({ ...newForm, name: e.target.value })
     }
 
-    const addTextQuestion = (e) => {
+    const addAQuestion = (e) => {
         e.preventDefault()
-        console.log(e.target)
-        blankFormTemplate.questions.push( {
-            type: "text",
-            prompt: "",
-        })
-        return(
-            <Question />
-        )
+        const buttonText = e.target.textContent
+        if (buttonText.includes("text")) {
+            newForm.questions.push({
+                type: "text",
+                prompt: "",
+            })
+        } else {
+            newForm.questions.push({
+                type: "radio",
+                prompt: "",
+            })
+        }
+
+        console.log(newForm)
+
     }
 
     return <div>
@@ -46,8 +53,9 @@ const FormBuilderContainer = ({ forms, setForms }) => {
                     onChange={(e) => handleChange(e)}
                 ></input>
             </label>
-           <button onClick={addTextQuestion}>Add a text question</button>
-           <button>Add a radio button question</button>
+            <button onClick={addAQuestion}>Add a text question</button>
+            <button onClick={addAQuestion}>Add a radio button question</button>
+            {newForm.questions.map(question => <Question type={question.type} prompt={question.prompt} />)}
 
 
             <button type="submit">Save Form</button>
