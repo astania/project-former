@@ -12,7 +12,7 @@ const FormBuilderContainer = () => {
 
     const [newForm, setNewForm] = useState(blankFormTemplate)
 
-    console.log(newForm)
+    console.log("new form", newForm)
 
     const newFormQuestions = newForm.questions
 
@@ -31,11 +31,13 @@ const FormBuilderContainer = () => {
             setNewForm({...newForm, questions: [...newForm.questions, {
                 type: "text",
                 prompt: "",
+                response: ""
             }]})
         } else {
             setNewForm({...newForm, questions: [...newForm.questions, {
                 type: "radio",
                 prompt: "",
+                response: ""
             }]})
         }
     }
@@ -58,7 +60,7 @@ const FormBuilderContainer = () => {
             <button onClick={addAQuestion}>Add a text question</button>
             <button onClick={addAQuestion}>Add a radio button question</button>
 
-            {newFormQuestions.map(question => <Question question={question} key={uuidv4()} />)}
+            {newFormQuestions.map(question => <Question question={question} setNewForm={setNewForm} key={uuidv4()} />)}
 
             <button type="submit">Save Form</button>
 
