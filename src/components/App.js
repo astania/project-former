@@ -28,8 +28,10 @@ function App() {
   }, [])
 
   const handleNewSubmissions = (newSubmission) => {
-    setSubmissions(...submissions, newSubmission)
+    setSubmissions([...submissions, newSubmission])
   }
+
+ 
 
   // console.log("All submissions:", submissions)
 
@@ -41,7 +43,7 @@ function App() {
 
         <Switch>
           <Route path="/forms/new">
-            <FormBuilderContainer forms={forms} setForms={setForms}/>
+            <FormBuilderContainer />
           </Route>
 
           <Route path="/forms">

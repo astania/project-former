@@ -19,11 +19,9 @@ const Form = ({ form, onNewSubmissions }) => {
         return submissionsArray
     }
 
-
     const [formResponses, setFormResponses] = useState(blankSubmission())
 
     console.log(formResponses)
-
 
     const handleChange = (e, prompt, index) => {
         // console.log(e.target.value)
@@ -33,14 +31,14 @@ const Form = ({ form, onNewSubmissions }) => {
         
         const updatedResponse = formResponses.map(question => {
             if(question.prompt === prompt){
-                console.log(question.prompt)
+                // console.log(question.prompt)
                 return {...question, response: input}
             }
             return question
         })
 
         setFormResponses(() => updatedResponse)
-        console.log("updated forms", formResponses)
+        // console.log("updated forms", formResponses)
      
     }
 
@@ -54,10 +52,10 @@ const Form = ({ form, onNewSubmissions }) => {
             },
             body: JSON.stringify(formResponses),
         })
-            .then(r => r.text())
+            .then(r => r.json())
             .then(newSubmission => onNewSubmissions(newSubmission))
 
-        // setFormResponses([...blankSubmission()])
+        console.log(blankSubmission())
 
     }
 

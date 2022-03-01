@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Question from "../components/form builders/Question"
 
-const FormBuilderContainer = ({ forms, setForms }) => {
+const FormBuilderContainer = () => {
 
 
     const blankFormTemplate = {
@@ -13,29 +13,45 @@ const FormBuilderContainer = ({ forms, setForms }) => {
 
     console.log(newForm)
 
+    const newFormQuestions = newForm.questions
+    const updatedQuestions = []
+
     const handleChange = (e) => {
         e.preventDefault()
         console.log(e.target.value)
         setNewForm({ ...newForm, name: e.target.value })
     }
 
+    //how to add a question object to the questions array??
     const addAQuestion = (e) => {
         e.preventDefault()
-        const buttonText = e.target.textContent
-        if (buttonText.includes("text")) {
-            newForm.questions.push({
-                type: "text",
-                prompt: "",
-            })
-        } else {
-            newForm.questions.push({
-                type: "radio",
-                prompt: "",
-            })
-        }
+        updatedQuestions.push({
+            type: "text",
+            prompt: "",
+        })
+        
+        setNewForm({...newForm, questions: [...newForm.questions, {
+            type: "text",
+            prompt: "",
+        }]})
+        console.log("updated form", newForm)
 
-        console.log(newForm)
+        // const buttonText = e.target.textContent
+        // if (buttonText.includes("text")) {
+        //     // console.log("added a text question")
+        //     newForm.questions.push({
+        //         type: "text",
+        //         prompt: "",
+        //     }
 
+        //     )
+        // } else {
+        //     // console.log("added a radio question")
+        //     newForm.questions.push({
+        //         type: "radio",
+        //         prompt: "",
+        //     })
+        // }
     }
 
     return <div>
@@ -54,9 +70,9 @@ const FormBuilderContainer = ({ forms, setForms }) => {
                 ></input>
             </label>
             <button onClick={addAQuestion}>Add a text question</button>
-            <button onClick={addAQuestion}>Add a radio button question</button>
-            {newForm.questions.map(question => <Question type={question.type} prompt={question.prompt} />)}
+            {/* <button onClick={addAQuestion}>Add a radio button question</button> */}
 
+            {newFormQuestions.map(question => <Question question={question} key={question.prompt} />)}
 
             <button type="submit">Save Form</button>
 
