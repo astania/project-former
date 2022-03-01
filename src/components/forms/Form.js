@@ -20,32 +20,27 @@ const Form = ({ form, onNewSubmissions }) => {
         })
         return submission
     }
+    // console.log("BlankSubmission", blankSubmission())
 
     const [formResponses, setFormResponses] = useState(blankSubmission())
 
-    // console.log("FormResponse", formResponses)
+    console.log("FormResponse", formResponses)
+
 
     const handleChange = (e, prompt, index) => {
-        // console.log(e.target.value)
-        // console.log(prompt, index)
+ 
         const input = e.target.value
-        const questions = formResponses.entries
+        const responseQuestions = formResponses.entries
 
-        // console.log("response", formResponses)
-
-        const updatedResponse = questions.map(question => {
+        const updatedResponse = responseQuestions.map(question => {
             if (question.prompt === prompt) {
-                // console.log(question.prompt)
                 return { ...question, response: input }
             }
             return question
         })
 
-        // console.log("UPDATE",updatedResponse)
-
-        setFormResponses(() => ({ formResponses, entries: updatedResponse }))
-        console.log("updated forms", formResponses)
-
+        setFormResponses(() => ({...formResponses}))
+        console.log("This gets submitted", formResponses)
     }
 
     const handleSubmit = (e) => {
@@ -61,7 +56,7 @@ const Form = ({ form, onNewSubmissions }) => {
             .then(r => r.json())
             .then(newSubmission => onNewSubmissions(newSubmission))
 
-        console.log(blankSubmission())
+        // console.log(blankSubmission())
 
     }
 

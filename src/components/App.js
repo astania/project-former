@@ -28,7 +28,10 @@ function App() {
   }, [])
 
   const handleNewSubmissions = (newSubmission) => {
+    console.log("new submission", newSubmission)
     setSubmissions([...submissions, newSubmission])
+
+    console.log(newSubmission)
   }
 
  
