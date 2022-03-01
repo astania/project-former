@@ -14,7 +14,6 @@ const FormBuilderContainer = () => {
     console.log(newForm)
 
     const newFormQuestions = newForm.questions
-    const updatedQuestions = []
 
     const handleChange = (e) => {
         e.preventDefault()
@@ -25,16 +24,11 @@ const FormBuilderContainer = () => {
     //how to add a question object to the questions array??
     const addAQuestion = (e) => {
         e.preventDefault()
-        updatedQuestions.push({
-            type: "text",
-            prompt: "",
-        })
         
         setNewForm({...newForm, questions: [...newForm.questions, {
             type: "text",
             prompt: "",
         }]})
-        console.log("updated form", newForm)
 
         // const buttonText = e.target.textContent
         // if (buttonText.includes("text")) {
