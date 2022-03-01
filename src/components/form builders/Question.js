@@ -1,15 +1,17 @@
 
 const Question = ({ question }) => {
+
+    console.log("question:", question)
     return (
         <h1>this is a question</h1>
     )
-    // {question}
+  
 
-    // if(type === "text"){
+    // if(question.type === "text"){
     // return (<div>
     //     <label> Prompt
     //         <input 
-    //         type={type} 
+    //         type={question.type} 
     //         value={prompt}/>
     //     </label>
     // </div>);
@@ -17,7 +19,7 @@ const Question = ({ question }) => {
     //     return (<div>
     //         <label> Prompt
     //             <input 
-    //             type={type} 
+    //             type={question.type} 
     //             value={prompt}/>
     //         </label>
     //     </div>);

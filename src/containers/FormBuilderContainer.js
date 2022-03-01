@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Question from "../components/form builders/Question"
+import { v4 as uuidv4 } from 'uuid'
 
 const FormBuilderContainer = () => {
 
@@ -21,16 +22,11 @@ const FormBuilderContainer = () => {
         setNewForm({ ...newForm, name: e.target.value })
     }
 
-    //how to add a question object to the questions array??
     const addAQuestion = (e) => {
         e.preventDefault()
-        
-        // setNewForm({...newForm, questions: [...newForm.questions, {
-        //     type: "text",
-        //     prompt: "",
-        // }]})
 
         const buttonText = e.target.textContent
+
         if (buttonText.includes("text")) {
             setNewForm({...newForm, questions: [...newForm.questions, {
                 type: "text",
@@ -62,7 +58,7 @@ const FormBuilderContainer = () => {
             <button onClick={addAQuestion}>Add a text question</button>
             <button onClick={addAQuestion}>Add a radio button question</button>
 
-            {newFormQuestions.map(question => <Question question={question} key={question.prompt} />)}
+            {newFormQuestions.map(question => <Question question={question} key={uuidv4()} />)}
 
             <button type="submit">Save Form</button>
 
