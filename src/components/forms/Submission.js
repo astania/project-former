@@ -11,7 +11,11 @@ function Submission({ sub, submissionsForThisForm }) {
     
     const handleDelete = () => {
         console.log(sub)
-        fetch(`http://localhost:3001/submissions/${sub.id}`)
+        fetch(`http://localhost:3001/submissions/${sub.id}`, {
+            method: "DELETE",
+        })
+        .then(r => r.json())
+        .then(() => console.log("deleted"))
     }
 
     return (

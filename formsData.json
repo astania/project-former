@@ -51,30 +51,6 @@
   ],
   "submissions": [
     {
-      "id": 0,
-      "formName": "Test Form",
-      "entries": [
-        {
-          "id": 0,
-          "type": "text",
-          "prompt": "what is your favorite color?",
-          "response": "test"
-        },
-        {
-          "id": 1,
-          "type": "text",
-          "prompt": "what are you studying?",
-          "response": "test"
-        },
-        {
-          "id": 2,
-          "type": "text",
-          "prompt": "what is 2 * 2?",
-          "response": "test"
-        }
-      ]
-    },
-    {
       "formName": "Second Form",
       "entries": [
         {
