@@ -4,42 +4,48 @@ import { useState } from "react";
 
 const Form = ({ form, onNewSubmissions }) => {
     const questions = form.questions
-    const formName = form.name
 
     const blankSubmission = () => {
-        const submissionsArray = [{formName: formName}]
+        const submission = {
+            formName: form.name,
+            entries: []
+        }
         questions.map(question => {
-            return (submissionsArray.push( {
+            return (submission.entries.push({
                 id: question.id,
                 type: question.type,
                 prompt: question.prompt,
                 response: ""
             }))
         })
-        return submissionsArray
+        return submission
     }
 
     const [formResponses, setFormResponses] = useState(blankSubmission())
 
-    console.log(formResponses)
+    // console.log("FormResponse", formResponses)
 
     const handleChange = (e, prompt, index) => {
         // console.log(e.target.value)
         // console.log(prompt, index)
         const input = e.target.value
-        
-        
-        const updatedResponse = formResponses.map(question => {
-            if(question.prompt === prompt){
+        const questions = formResponses.entries
+
+        // console.log("response", formResponses)
+
+        const updatedResponse = questions.map(question => {
+            if (question.prompt === prompt) {
                 // console.log(question.prompt)
-                return {...question, response: input}
+                return { ...question, response: input }
             }
             return question
         })
 
-        setFormResponses(() => updatedResponse)
-        // console.log("updated forms", formResponses)
-     
+        // console.log("UPDATE",updatedResponse)
+
+        setFormResponses(() => ({ formResponses, entries: updatedResponse }))
+        console.log("updated forms", formResponses)
+
     }
 
     const handleSubmit = (e) => {
@@ -74,8 +80,8 @@ const Form = ({ form, onNewSubmissions }) => {
                         </label>
                     )
                 })
-            }
-            <button type="submit">Submit</button>
+                }
+                <button type="submit">Submit</button>
 
             </form>
         </div>

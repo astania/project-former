@@ -33,7 +33,7 @@ function App() {
 
  
 
-  console.log("All submissions:", submissions)
+  // console.log("All submissions:", submissions)
 
   return (
     <div className="App">

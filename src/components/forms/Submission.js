@@ -6,12 +6,12 @@ function Submission({ sub, submissionsForThisForm }) {
 
     const responseNumber = submissionsForThisForm.indexOf(sub) + 1
 
-    //remove first form name element from sub array
     const elementsToDisplay = sub.entries
+
     
     const handleDelete = () => {
         console.log(sub)
-        // fetch(`http://localhost:3001/submissions/${sub.id}`)
+        fetch(`http://localhost:3001/submissions/${sub.id}`)
     }
 
     return (
