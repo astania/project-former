@@ -34,7 +34,13 @@ function App() {
     console.log(newSubmission)
   }
 
- 
+  const handleDeleteSubmission = (id) => {
+    const filteredSubmissions = submissions.filter(submission => submission.id !== id)
+
+    setSubmissions(filteredSubmissions)
+
+  }
+
 
   // console.log("All submissions:", submissions)
 
@@ -58,7 +64,7 @@ function App() {
           </Route> */}
 
           <Route path="/submissions">
-            <FormSubmissionsContainer submissions={submissions} forms={forms} />
+            <FormSubmissionsContainer submissions={submissions} forms={forms} onDeleteSubmission={handleDeleteSubmission} />
           </Route>
 
           <Route exact path="/">
