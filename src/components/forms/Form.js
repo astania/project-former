@@ -39,8 +39,8 @@ const Form = ({ form, onNewSubmissions }) => {
             return question
         })
 
-        setFormResponses(() => ({...formResponses}))
-        console.log("This gets submitted", formResponses)
+        setFormResponses(() => ({...formResponses, entries: updatedResponse}))
+        console.log("", formResponses)
     }
 
     const handleSubmit = (e) => {
