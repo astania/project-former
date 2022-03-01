@@ -4,7 +4,9 @@ import { v4 as uuidv4 } from 'uuid'
 
 const FormSubmissions = ({ formName, submissions }) => {
     console.log("submissions", submissions)
-    const submissionsForThisForm = submissions.filter(submission => submission[0].formName === formName)
+    const submissionsForThisForm = submissions.filter(submission => submission.formName === formName)
+
+    console.log("FOR THIS FORM", submissionsForThisForm)
 
     return (
         <div>

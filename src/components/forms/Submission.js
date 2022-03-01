@@ -2,12 +2,12 @@ import { v4 as uuidv4 } from 'uuid'
 import SubmissionResponse from './SubmissionResponse'
 
 function Submission({ sub, submissionsForThisForm }) {
-    // console.log("this is the sub:", sub)
+    console.log("this is the sub:", sub)
 
     const responseNumber = submissionsForThisForm.indexOf(sub) + 1
 
     //remove first form name element from sub array
-    const elementsToDisplay = sub.filter(entry => sub.indexOf(entry) > 0)
+    const elementsToDisplay = sub.entries
     
     const handleDelete = () => {
         console.log(sub)
