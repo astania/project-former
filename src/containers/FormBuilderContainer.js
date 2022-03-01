@@ -25,27 +25,23 @@ const FormBuilderContainer = () => {
     const addAQuestion = (e) => {
         e.preventDefault()
         
-        setNewForm({...newForm, questions: [...newForm.questions, {
-            type: "text",
-            prompt: "",
-        }]})
+        // setNewForm({...newForm, questions: [...newForm.questions, {
+        //     type: "text",
+        //     prompt: "",
+        // }]})
 
-        // const buttonText = e.target.textContent
-        // if (buttonText.includes("text")) {
-        //     // console.log("added a text question")
-        //     newForm.questions.push({
-        //         type: "text",
-        //         prompt: "",
-        //     }
-
-        //     )
-        // } else {
-        //     // console.log("added a radio question")
-        //     newForm.questions.push({
-        //         type: "radio",
-        //         prompt: "",
-        //     })
-        // }
+        const buttonText = e.target.textContent
+        if (buttonText.includes("text")) {
+            setNewForm({...newForm, questions: [...newForm.questions, {
+                type: "text",
+                prompt: "",
+            }]})
+        } else {
+            setNewForm({...newForm, questions: [...newForm.questions, {
+                type: "radio",
+                prompt: "",
+            }]})
+        }
     }
 
     return <div>
@@ -64,7 +60,7 @@ const FormBuilderContainer = () => {
                 ></input>
             </label>
             <button onClick={addAQuestion}>Add a text question</button>
-            {/* <button onClick={addAQuestion}>Add a radio button question</button> */}
+            <button onClick={addAQuestion}>Add a radio button question</button>
 
             {newFormQuestions.map(question => <Question question={question} key={question.prompt} />)}
 
