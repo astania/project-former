@@ -1,48 +1,44 @@
 
 const Question = ({ question, newFormQuestions, setNewForm, newForm }) => {
 
-    console.log("question:", question)
+    const questionIndex = newFormQuestions.indexOf(question)
+    
+    const handleTextChange = (e) => {
 
-    const handleTextChange = (e, prompt) => {
-        e.preventDefault()
         const input = e.target.value
-        prompt = input
-        const questionIndex = newFormQuestions.indexOf(question)
-
-        newFormQuestions.map(q => (newFormQuestions.indexOf(q) === questionIndex){
-
-        })
-
-        console.log("prompt", prompt)
-        // setNewForm({...newForm, questions: [...newForm.questions, {
-        //     type: question.type,
-        //     prompt: input,
-        //     response: question.response
-        // }]})
         
-        // setNewForm({ ...newForm, question.prompt: input })
+        let updatedQuestions = [...newFormQuestions]
+        updatedQuestions[questionIndex].prompt = input
+        let updatedForm = {...newForm}
+        updatedForm.questions = updatedQuestions
+
+        setNewForm(updatedForm)
+
+        console.log("input", input)
+        console.log("new form", newForm)
+        
     }
 
     const handleRadioChange = (e) => {
         console.log(e)
     }
 
-    if(question.type === "text"){
-    return (<div>
-        <label> Prompt
-            <input 
-            type={question.type} 
-            value={question.prompt}
-            onChange={(e) => handleTextChange(e, question.prompt)}/>
-        </label>
-    </div>);
-    } else{
+    if (question.type === "text") {
         return (<div>
             <label> Prompt
-                <input 
-                type={question.type} 
-                value={question.prompt}
-                onChange={handleRadioChange}/>
+                <input
+                    type={question.type}
+                    value={newForm.questions[questionIndex].prompt}
+                    onChange={handleTextChange} />
+            </label>
+        </div>);
+    } else {
+        return (<div>
+            <label> Prompt
+                <input
+                    type={question.type}
+                    value={question.prompt}
+                    onChange={handleRadioChange} />
             </label>
         </div>);
     }

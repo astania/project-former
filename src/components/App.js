@@ -45,6 +45,12 @@ function App() {
     setForms([...forms, newForm])
   }
 
+  const handleDeleteForm = (id) => {
+    const filteredForms = forms.filter(form => form.id !== id)
+
+    setForms(filteredForms)
+  }
+
 
   // console.log("All submissions:", submissions)
 
@@ -60,7 +66,7 @@ function App() {
           </Route>
 
           <Route path="/forms">
-            <FormViewerContainer forms={forms} onNewSubmissions={handleNewSubmissions} />
+            <FormViewerContainer forms={forms} onNewSubmissions={handleNewSubmissions} onDeleteForm={handleDeleteForm} />
           </Route>
 
           {/* <Route path="/forms/:id">
