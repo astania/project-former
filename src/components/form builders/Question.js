@@ -1,16 +1,30 @@
 
-const Question = ({ question, setNewForm }) => {
+const Question = ({ question, newFormQuestions, setNewForm, newForm }) => {
 
     console.log("question:", question)
 
-    const handleChange = (e) => {
-        // let value
-        // e.target.type === "radio" ? value = "checked" : value = e.target.value
-
+    const handleTextChange = (e, prompt) => {
+        e.preventDefault()
         const input = e.target.value
+        prompt = input
+        const questionIndex = newFormQuestions.indexOf(question)
 
+        newFormQuestions.map(q => (newFormQuestions.indexOf(q) === questionIndex){
+
+        })
+
+        console.log("prompt", prompt)
+        // setNewForm({...newForm, questions: [...newForm.questions, {
+        //     type: question.type,
+        //     prompt: input,
+        //     response: question.response
+        // }]})
         
-        
+        // setNewForm({ ...newForm, question.prompt: input })
+    }
+
+    const handleRadioChange = (e) => {
+        console.log(e)
     }
 
     if(question.type === "text"){
@@ -19,7 +33,7 @@ const Question = ({ question, setNewForm }) => {
             <input 
             type={question.type} 
             value={question.prompt}
-            onChange={handleChange}/>
+            onChange={(e) => handleTextChange(e, question.prompt)}/>
         </label>
     </div>);
     } else{
@@ -28,7 +42,7 @@ const Question = ({ question, setNewForm }) => {
                 <input 
                 type={question.type} 
                 value={question.prompt}
-                onChange={handleChange}/>
+                onChange={handleRadioChange}/>
             </label>
         </div>);
     }

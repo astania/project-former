@@ -41,6 +41,10 @@ function App() {
 
   }
 
+  const handleNewForm = (newForm) => {
+    setForms([...forms, newForm])
+  }
+
 
   // console.log("All submissions:", submissions)
 

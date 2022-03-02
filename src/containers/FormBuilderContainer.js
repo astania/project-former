@@ -16,7 +16,7 @@ const FormBuilderContainer = () => {
 
     const newFormQuestions = newForm.questions
 
-    const handleChange = (e) => {
+    const handleNameChange = (e) => {
         e.preventDefault()
         console.log(e.target.value)
         setNewForm({ ...newForm, name: e.target.value })
@@ -54,13 +54,13 @@ const FormBuilderContainer = () => {
                 <input type="text"
                     value={newForm.name}
                     name="name"
-                    onChange={(e) => handleChange(e)}
+                    onChange={(e) => handleNameChange(e)}
                 ></input>
             </label>
             <button onClick={addAQuestion}>Add a text question</button>
             <button onClick={addAQuestion}>Add a radio button question</button>
 
-            {newFormQuestions.map(question => <Question question={question} setNewForm={setNewForm} key={uuidv4()} />)}
+            {newFormQuestions.map(question => <Question question={question} setNewForm={setNewForm} newFormQuestions={newFormQuestions} newForm={newForm} key={uuidv4()} />)}
 
             <button type="submit">Save Form</button>
 
