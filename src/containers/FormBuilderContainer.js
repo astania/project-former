@@ -1,9 +1,7 @@
 import { useState } from "react"
 import Question from "../components/form builders/Question"
-// import { v4 as uuidv4 } from 'uuid'
 
 const FormBuilderContainer = ({ onAddForm }) => {
-
 
     const blankFormTemplate = {
         name: "",
@@ -12,38 +10,23 @@ const FormBuilderContainer = ({ onAddForm }) => {
 
     const [newForm, setNewForm] = useState(blankFormTemplate)
 
-    console.log("new form", newForm)
-
     const newFormQuestions = newForm.questions
 
     const handleNameChange = (e) => {
         e.preventDefault()
-        console.log(e.target.value)
+
         setNewForm({ ...newForm, name: e.target.value })
     }
 
     const addAQuestion = (e) => {
         e.preventDefault()
-
-        const buttonText = e.target.textContent
-
-        if (buttonText.includes("text")) {
-            setNewForm({
-                ...newForm, questions: [...newForm.questions, {
-                    type: "text",
-                    prompt: "",
-                    response: ""
-                }]
-            })
-        } else {
-            setNewForm({
-                ...newForm, questions: [...newForm.questions, {
-                    type: "radio",
-                    prompt: "",
-                    response: ""
-                }]
-            })
-        }
+        setNewForm({
+            ...newForm, questions: [...newForm.questions, {
+                type: "text",
+                prompt: "",
+                response: ""
+            }]
+        })
     }
 
     const handleSubmitForm = (e) => {
@@ -75,8 +58,7 @@ const FormBuilderContainer = ({ onAddForm }) => {
                 ></input>
             </label>
             <button onClick={addAQuestion}>Add a text question</button>
-            <button onClick={addAQuestion}>Add a radio button question</button>
-
+            
             {newFormQuestions.map((question, index) => <Question question={question} setNewForm={setNewForm} newFormQuestions={newFormQuestions} newForm={newForm} key={index} />)}
 
             <button type="submit">Save Form</button>
@@ -90,45 +72,28 @@ const FormBuilderContainer = ({ onAddForm }) => {
 
 export default FormBuilderContainer;
 
-// import { useState } from "react"
-// import Question from "../components/form builders/Question"
-// import { v4 as uuidv4 } from 'uuid'
-// import InitialForm from "../components/form builders/InitialForm"
-// import FormTemplate from "../components/form builders/FormTemplate"
-
-// const FormBuilderContainer = () => {
 
 
-//     const blankFormTemplate = {
-//         name: "",
-//         questions: []
-//     }
-
-//     const [newForm, setNewForm] = useState(blankFormTemplate)
-
-//     const handleNameChange = (e) => {
-//         setNewForm({ ...newForm, name: e.target.value })
-//     }
-
-//     const handleFormNameSubmit = (e) => {
-//         e.preventDefault()
-//         console.log(newForm)
-
-//     }
-
-//     //user enters new form name in input field, presses enter
-//     //input field becomes an h2 with the new form name
-//     //question input field loads
-//     //two buttons appear: add another question and save form
-//     //add another question -> loads another question input field + two buttons
-//     //save form submits the form and brings you back to the initial page to enter a new form name 
 
 
-//     return <div>
-//         {newForm.name === "" ? <InitialForm newForm={newForm} setNewForm={setNewForm} handleNameChange={handleNameChange} handleFormNameSubmit={handleFormNameSubmit} /> : <FormTemplate newForm={newForm} setNewForm={setNewForm} />}
-
-//     </div>
-// }
 
 
-// export default FormBuilderContainer;
+// const buttonText = e.target.textContent
+
+//         if (buttonText.includes("text")) {
+//             setNewForm({
+//                 ...newForm, questions: [...newForm.questions, {
+//                     type: "text",
+//                     prompt: "",
+//                     response: ""
+//                 }]
+//             })
+//         } else {
+//             setNewForm({
+//                 ...newForm, questions: [...newForm.questions, {
+//                     type: "radio",
+//                     prompt: "",
+//                     response: ""
+//                 }]
+//             })
+//         }
