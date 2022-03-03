@@ -26,7 +26,7 @@ const FormCard = ({ form, onNewSubmissions, onDeleteForm }) => {
                 <button onClick={handleSelectForm}>{selectedForm ? "un-select form" : "select form"}</button>
                 <button onClick={handleDelete}>delete form</button>
             </div>
-            <div>{selectedForm ? <Form form={form} onNewSubmissions={onNewSubmissions} /> : null}</div>
+            <div>{selectedForm ? <Form form={form} onNewSubmissions={onNewSubmissions} key={form.id}/> : null}</div>
         </>
     );
 }

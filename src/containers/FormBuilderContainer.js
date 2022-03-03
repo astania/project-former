@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Question from "../components/form builders/Question"
 
-const FormBuilderContainer = ({ onAddForm }) => {
+const FormBuilderContainer = ({ onAddForm, forms }) => {
 
     const blankFormTemplate = {
         name: "",
@@ -12,6 +12,11 @@ const FormBuilderContainer = ({ onAddForm }) => {
 
     const newFormQuestions = newForm.questions
 
+    let formNames = []
+    forms.map(form => formNames.push(form.name))
+
+    
+
     const handleNameChange = (e) => {
         e.preventDefault()
 
@@ -19,6 +24,7 @@ const FormBuilderContainer = ({ onAddForm }) => {
     }
 
     const addAQuestion = (e) => {
+        
         e.preventDefault()
         setNewForm({
             ...newForm, questions: [...newForm.questions, {
@@ -30,6 +36,7 @@ const FormBuilderContainer = ({ onAddForm }) => {
     }
 
     const handleSubmitForm = (e) => {
+
         e.preventDefault()
         fetch("http://localhost:3001/forms", {
             method: "POST",
@@ -40,6 +47,8 @@ const FormBuilderContainer = ({ onAddForm }) => {
         })
             .then(r => r.json)
             .then(addedForm => onAddForm(addedForm))
+
+            setNewForm(blankFormTemplate)
     }
 
     return <div>

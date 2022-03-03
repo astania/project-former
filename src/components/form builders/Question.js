@@ -16,9 +16,15 @@ const Question = ({ question, newFormQuestions, setNewForm, newForm }) => {
 
     }
 
-    const handleRadioChange = (e) => {
-        console.log(e)
+    const handleDeleteQuestion = (e) => {
+        e.preventDefault()
+        const newQuestionsArray = newFormQuestions.filter(q => newFormQuestions.indexOf(q) !== newFormQuestions.indexOf(question))
+        let updatedForm = { ...newForm }
+        updatedForm.questions = newQuestionsArray
+
+        setNewForm(updatedForm)
     }
+
 
     return (<div>
         <label> Prompt
@@ -27,6 +33,7 @@ const Question = ({ question, newFormQuestions, setNewForm, newForm }) => {
                 value={newForm.questions[questionIndex].prompt}
                 onChange={handleTextChange} />
         </label>
+        <button onClick={handleDeleteQuestion}>delete question</button>
     </div>);
 }
 

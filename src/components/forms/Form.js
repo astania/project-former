@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-//job tracker association
-
 const Form = ({ form, onNewSubmissions }) => {
     const questions = form.questions
 
