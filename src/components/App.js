@@ -41,7 +41,7 @@ function App() {
 
   }
 
-  const handleNewForm = (newForm) => {
+  const handleAddForm = (newForm) => {
     setForms([...forms, newForm])
   }
 
@@ -62,7 +62,7 @@ function App() {
 
         <Switch>
           <Route path="/forms/new">
-            <FormBuilderContainer />
+            <FormBuilderContainer onAddForm={handleAddForm}/>
           </Route>
 
           <Route path="/forms">
