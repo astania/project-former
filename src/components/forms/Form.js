@@ -5,7 +5,7 @@ import { useState } from "react";
 const Form = ({ form, onNewSubmissions }) => {
     const questions = form.questions
 
-    const blankSubmission = () => {
+    const blankSubmissionTemplate = () => {
         const submission = {
             formName: form.name,
             entries: []
@@ -20,14 +20,10 @@ const Form = ({ form, onNewSubmissions }) => {
         })
         return submission
     }
-    // console.log("BlankSubmission", blankSubmission())
 
-    const [formResponses, setFormResponses] = useState(blankSubmission())
+    const [formResponses, setFormResponses] = useState(blankSubmissionTemplate())
 
-    console.log("FormResponse", formResponses)
-
-
-    const handleChange = (e, prompt, index) => {
+    const handleChange = (e, prompt) => {
  
         const input = e.target.value
         const responseQuestions = formResponses.entries
@@ -40,7 +36,6 @@ const Form = ({ form, onNewSubmissions }) => {
         })
 
         setFormResponses(() => ({...formResponses, entries: updatedResponse}))
-        console.log("", formResponses)
     }
 
     const handleSubmit = (e) => {
@@ -56,21 +51,19 @@ const Form = ({ form, onNewSubmissions }) => {
             .then(r => r.json())
             .then(newSubmission => onNewSubmissions(newSubmission))
 
-        // console.log(blankSubmission())
-
     }
 
     return (
         <div>
             <h1>{form.name}</h1>
             <form onSubmit={handleSubmit}>
-                {questions.map((question, index) => {
+                {questions.map((question) => {
                     return (
                         <label key={question.id}>
                             {question.prompt}
                             <input
-                                value={blankSubmission().response}
-                                onChange={(e) => handleChange(e, question.prompt, index)}
+                                value={blankSubmissionTemplate().response}
+                                onChange={(e) => handleChange(e, question.prompt)}
                             ></input>
                         </label>
                     )
