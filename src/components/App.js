@@ -69,10 +69,6 @@ function App() {
             <FormViewerContainer forms={forms} onNewSubmissions={handleNewSubmissions} onDeleteForm={handleDeleteForm} />
           </Route>
 
-          {/* <Route path="/forms/:id">
-            <Form />
-          </Route> */}
-
           <Route path="/submissions">
             <FormSubmissionsContainer submissions={submissions} forms={forms} onDeleteSubmission={handleDeleteSubmission} />
           </Route>
