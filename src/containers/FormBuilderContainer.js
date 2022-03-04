@@ -45,7 +45,7 @@ const FormBuilderContainer = ({ onAddForm, forms }) => {
             },
             body: JSON.stringify(newForm),
         })
-            .then(r => r.json)
+            .then(r => r.json())
             .then(addedForm => onAddForm(addedForm))
 
             setNewForm(blankFormTemplate)

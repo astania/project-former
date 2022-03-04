@@ -13,18 +13,17 @@ const Question = ({ question, newFormQuestions, setNewForm, newForm }) => {
         updatedForm.questions = updatedQuestions
 
         setNewForm(updatedForm)
-
     }
 
     const handleDeleteQuestion = (e) => {
         e.preventDefault()
+        
         const newQuestionsArray = newFormQuestions.filter(q => newFormQuestions.indexOf(q) !== newFormQuestions.indexOf(question))
         let updatedForm = { ...newForm }
         updatedForm.questions = newQuestionsArray
 
         setNewForm(updatedForm)
     }
-
 
     return (<div>
         <label> Prompt

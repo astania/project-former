@@ -49,18 +49,20 @@ const Form = ({ form, onNewSubmissions }) => {
             .then(r => r.json())
             .then(newSubmission => onNewSubmissions(newSubmission))
 
+        setFormResponses(blankSubmissionTemplate())
     }
+
 
     return (
         <div>
             <h1>{form.name}</h1>
             <form onSubmit={handleSubmit}>
-                {questions.map((question) => {
+                {formResponses.entries.map((question) => {
                     return (
                         <label key={question.id}>
                             {question.prompt}
                             <input
-                                value={blankSubmissionTemplate().response}
+                                value={question.response}
                                 onChange={(e) => handleChange(e, question.prompt)}
                             ></input>
                         </label>
