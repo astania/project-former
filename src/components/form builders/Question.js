@@ -9,15 +9,14 @@ const Question = ({ question, newFormQuestions, setNewForm, newForm }) => {
 
         let updatedQuestions = [...newFormQuestions]
         updatedQuestions[questionIndex].prompt = input
-        let updatedForm = { ...newForm }
-        updatedForm.questions = updatedQuestions
+        let updatedForm = { ...newForm, questions: updatedQuestions }
 
         setNewForm(updatedForm)
     }
 
     const handleDeleteQuestion = (e) => {
         e.preventDefault()
-        
+
         const newQuestionsArray = newFormQuestions.filter(q => newFormQuestions.indexOf(q) !== newFormQuestions.indexOf(question))
         let updatedForm = { ...newForm }
         updatedForm.questions = newQuestionsArray

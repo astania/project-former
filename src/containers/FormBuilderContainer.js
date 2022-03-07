@@ -12,11 +12,6 @@ const FormBuilderContainer = ({ onAddForm, forms }) => {
 
     const newFormQuestions = newForm.questions
 
-    let formNames = forms.map(form => form.name)
-    console.log(formNames)
-
-
-
     const handleNameChange = (e) => {
         e.preventDefault()
 
