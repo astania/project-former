@@ -12,8 +12,8 @@ const FormBuilderContainer = ({ onAddForm, forms }) => {
 
     const newFormQuestions = newForm.questions
 
-    let formNames = []
-    forms.forEach(form => formNames.push(form.name))
+    let formNames = forms.map(form => form.name)
+    console.log(formNames)
 
 
 
