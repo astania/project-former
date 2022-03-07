@@ -1,6 +1,6 @@
 # Project Former
 
-### Overview
+## Overview
 Welcome to Project Former! Project Former is a React app for building forms and tracking the form responses. You can build multiple forms, submit responses to the forms and see all submitted responses for each form. 
 
 This app includes:
@@ -10,18 +10,17 @@ This app includes:
 - Submission viewer page sorted by form 
 - Delete any form and submission
 
-### Technologies
+## Technologies
 
 This project uses React with a json server and was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### Installation
 
-### Getting Started
+## Getting Started
 To get a local copy up and running follow these steps below
 
 ### Prerequisites
 
-Node Package Manager
+- Node Package Manager
 
 running the following command in your terminal will install the latest version of Node Package Manager:
 
@@ -39,7 +38,7 @@ Start the json server - npm run server
 Open the app in your browser - npm start
 
 
-### File Structure
+## File Structure
 
 App.js - This component holds the initial fetch requests, all the route paths, and holds the forms and submissions state variables. 
 
@@ -49,7 +48,7 @@ containers - This directory has three components corresponding with the three na
 
 components - This directory is separated into four sub-directories that contain the navigation components (including the header, footer, and navbar), form builder components, form viewing components, and submissions components. 
 
-### Usage
+## Usage
 
 This is a demo app with no users or login capabilities. 
 
@@ -61,16 +60,16 @@ To submit a response to a form, click "select form" and enter your responses to 
 
 To view the submissions, click "submissions". From here, you can delete any submission. 
 
-### Contributions
+## Contributions
 Contributions are greatly appreciated.
 
 If you have a suggestion, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement". Don't forget to give the project a star! Thanks again!
 
-#### Fork the Project
-Create your Feature Branch (git checkout -b feature/AmazingFeature)
-Commit your Changes (git commit -m 'Add some AmazingFeature')
-Push to the Branch (git push origin feature/AmazingFeature)
-Open a Pull Request
+### Fork the Project
+--Create your Feature Branch (git checkout -b feature/AmazingFeature)
+- Commit your Changes (git commit -m 'Add some AmazingFeature')
+- Push to the Branch (git push origin feature/AmazingFeature)
+- Open a Pull Request
 
 ## Contact
 
