@@ -16,10 +16,10 @@ This project uses React with a json server and was bootstrapped with [Create Rea
 
 ### Installation
 
-##Getting Started
+## Getting Started
 To get a local copy up and running follow these steps below
 
-#Prerequisites
+# Prerequisites
 
 Node Package Manager
 
@@ -29,7 +29,7 @@ npm install npm@latest -g
 
 
 
-#Installation
+# Installation
 
 Clone the repo - git clone git@github.com:astania/project-former.git
 
