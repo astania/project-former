@@ -13,9 +13,9 @@ const FormBuilderContainer = ({ onAddForm, forms }) => {
     const newFormQuestions = newForm.questions
 
     let formNames = []
-    forms.map(form => formNames.push(form.name))
+    forms.forEach(form => formNames.push(form.name))
 
-    
+
 
     const handleNameChange = (e) => {
         e.preventDefault()
@@ -24,7 +24,7 @@ const FormBuilderContainer = ({ onAddForm, forms }) => {
     }
 
     const addAQuestion = (e) => {
-        
+
         e.preventDefault()
         setNewForm({
             ...newForm, questions: [...newForm.questions, {
@@ -39,25 +39,28 @@ const FormBuilderContainer = ({ onAddForm, forms }) => {
 
         e.preventDefault()
 
-        if(newForm.name === ""){
+        if (newForm.name === "") {
             alert("Please give your form a name")
         }
 
-        if (newFormQuestions.length === 0){
+        if (newFormQuestions.length === 0) {
             alert("Please add a question to your form")
         }
-        
-        fetch("http://localhost:3001/forms", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(newForm),
-        })
-            .then(r => r.json())
-            .then(addedForm => onAddForm(addedForm))
+
+        if (newForm.name !== "" && newFormQuestions.length > 0) {
+            fetch("http://localhost:3001/forms", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(newForm),
+            })
+                .then(r => r.json())
+                .then(addedForm => onAddForm(addedForm))
 
             setNewForm(blankFormTemplate)
+        }
+
     }
 
     return <div>
@@ -76,7 +79,7 @@ const FormBuilderContainer = ({ onAddForm, forms }) => {
                 ></input>
             </label>
             <button onClick={addAQuestion}>Add a text question</button>
-            
+
             {newFormQuestions.map((question, index) => <Question question={question} setNewForm={setNewForm} newFormQuestions={newFormQuestions} newForm={newForm} key={index} />)}
 
             <button type="submit">Save Form</button>
