@@ -39,6 +39,8 @@ const Form = ({ form, onNewSubmissions }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
+        
+
         fetch("http://localhost:3001/submissions", {
             method: "POST",
             headers: {

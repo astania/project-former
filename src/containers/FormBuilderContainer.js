@@ -38,6 +38,15 @@ const FormBuilderContainer = ({ onAddForm, forms }) => {
     const handleSubmitForm = (e) => {
 
         e.preventDefault()
+
+        if(newForm.name === ""){
+            alert("Please give your form a name")
+        }
+
+        if (newFormQuestions.length === 0){
+            alert("Please add a question to your form")
+        }
+        
         fetch("http://localhost:3001/forms", {
             method: "POST",
             headers: {
