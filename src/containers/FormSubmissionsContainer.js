@@ -1,4 +1,4 @@
-import FormSubmissions from "../components/forms/FormSubmissions";
+import FormSubmissions from "../components/submissions/FormSubmissions";
 
 const FormSubmissionsContainer = ({ submissions, forms, onDeleteSubmission }) => {
 

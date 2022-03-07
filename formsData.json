@@ -1,127 +1,47 @@
 {
   "forms": [
     {
-      "id": 0,
-      "name": "Test Form",
-      "questions": [
-        {
-          "id": 0,
-          "type": "text",
-          "prompt": "what is your favorite color?",
-          "response": ""
-        },
-        {
-          "id": 1,
-          "type": "text",
-          "prompt": "what are you studying?",
-          "response": ""
-        },
-        {
-          "id": 2,
-          "type": "text",
-          "prompt": "what is 2 * 2?",
-          "response": ""
-        }
-      ]
-    },
-    {
-      "id": 1,
-      "name": "Second Form",
-      "questions": [
-        {
-          "id": 0,
-          "type": "text",
-          "prompt": "what is your favorite color?",
-          "response": ""
-        },
-        {
-          "id": 1,
-          "type": "text",
-          "prompt": "what are you studying?",
-          "response": ""
-        },
-        {
-          "id": 2,
-          "type": "text",
-          "prompt": "what is 2 * 2?",
-          "response": ""
-        }
-      ]
-    },
-    {
-      "name": "feedback form ",
+      "name": "Client Satisfaction Survey",
       "questions": [
         {
           "type": "text",
-          "prompt": "question one ",
+          "prompt": "Were you satisfied with your experience in our store?",
           "response": ""
         },
         {
           "type": "text",
-          "prompt": "question two ",
+          "prompt": "What could we do to improve your experience?",
           "response": ""
         },
         {
           "type": "text",
-          "prompt": "question three ",
-          "response": ""
-        },
-        {
-          "type": "text",
-          "prompt": "question four ",
-          "response": ""
-        }
-      ],
-      "id": 2
-    },
-    {
-      "name": "another form ",
-      "questions": [
-        {
-          "type": "text",
-          "prompt": "question ",
-          "response": ""
-        },
-        {
-          "type": "text",
-          "prompt": "another question",
-          "response": ""
-        },
-        {
-          "type": "text",
-          "prompt": "third question ",
-          "response": ""
-        },
-        {
-          "type": "text",
-          "prompt": "fourth question",
-          "response": ""
-        }
-      ],
-      "id": 3
-    },
-    {
-      "name": "form",
-      "questions": [
-        {
-          "type": "text",
-          "prompt": "asdfasd",
-          "response": ""
-        },
-        {
-          "type": "text",
-          "prompt": "asdfads",
+          "prompt": "Why did you choose to shop here today?",
           "response": ""
         }
       ],
       "id": 4
     },
     {
-      "name": "form ",
+      "name": "Favorite Things Survey",
       "questions": [
         {
           "type": "text",
-          "prompt": "question",
+          "prompt": "What's your favorite color?",
+          "response": ""
+        },
+        {
+          "type": "text",
+          "prompt": "What's your favorite smell?",
+          "response": ""
+        },
+        {
+          "type": "text",
+          "prompt": "What's your favorite season?",
+          "response": ""
+        },
+        {
+          "type": "text",
+          "prompt": "What is your favorite movie?",
           "response": ""
         }
       ],
@@ -270,97 +190,95 @@
       "id": 9
     },
     {
-      "formName": "Test Form",
+      "formName": "Client Satisfaction Survey",
       "entries": [
         {
-          "id": 0,
           "type": "text",
-          "prompt": "what is your favorite color?",
-          "response": "asdf"
+          "prompt": "Were you satisfied with your experience in our store?",
+          "response": "very satisfied"
         },
         {
-          "id": 1,
           "type": "text",
-          "prompt": "what are you studying?",
-          "response": "asdf"
+          "prompt": "What could we do to improve your experience?",
+          "response": "More free samples!"
         },
         {
-          "id": 2,
           "type": "text",
-          "prompt": "what is 2 * 2?",
-          "response": "asdf"
+          "prompt": "Why did you choose to shop here today?",
+          "response": "convenience"
         }
       ],
       "id": 10
     },
     {
-      "formName": "Test Form",
+      "formName": "Client Satisfaction Survey",
       "entries": [
         {
-          "id": 0,
           "type": "text",
-          "prompt": "what is your favorite color?",
-          "response": "asdf"
+          "prompt": "Were you satisfied with your experience in our store?",
+          "response": "not at all"
         },
         {
-          "id": 1,
           "type": "text",
-          "prompt": "what are you studying?",
-          "response": "sdfdfads"
+          "prompt": "What could we do to improve your experience?",
+          "response": "lower your prices!"
         },
         {
-          "id": 2,
           "type": "text",
-          "prompt": "what is 2 * 2?",
-          "response": "asdf"
+          "prompt": "Why did you choose to shop here today?",
+          "response": "I thought there was a sale happening"
         }
       ],
       "id": 11
     },
     {
-      "formName": "Test Form",
+      "formName": "Favorite Things Survey",
       "entries": [
         {
-          "id": 0,
           "type": "text",
-          "prompt": "what is your favorite color?",
-          "response": "ddd"
+          "prompt": "What's your favorite color?",
+          "response": "Pink"
         },
         {
-          "id": 1,
           "type": "text",
-          "prompt": "what are you studying?",
-          "response": "ddd"
+          "prompt": "What's your favorite smell?",
+          "response": "fresh cut grass"
         },
         {
-          "id": 2,
           "type": "text",
-          "prompt": "what is 2 * 2?",
-          "response": "ddd"
+          "prompt": "What's your favorite season?",
+          "response": "summer!"
+        },
+        {
+          "type": "text",
+          "prompt": "What is your favorite movie?",
+          "response": "Totoro"
         }
       ],
       "id": 12
     },
     {
-      "formName": "Test Form",
+      "formName": "Favorite Things Survey",
       "entries": [
         {
-          "id": 0,
           "type": "text",
-          "prompt": "what is your favorite color?",
-          "response": "please!"
+          "prompt": "What's your favorite color?",
+          "response": "orange"
         },
         {
-          "id": 1,
           "type": "text",
-          "prompt": "what are you studying?",
-          "response": "asdf"
+          "prompt": "What's your favorite smell?",
+          "response": "roses"
         },
         {
-          "id": 2,
           "type": "text",
-          "prompt": "what is 2 * 2?",
-          "response": "dfd"
+          "prompt": "What's your favorite season?",
+          "response": "fall"
+        },
+        {
+          "type": "text",
+          "prompt": "What is your favorite movie?",
+          "response": "I love Porco Rosso"
         }
       ],
       "id": 13
