@@ -1,10 +1,50 @@
-# Getting Started with Create React App
+### Project Former
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Overview
+Welcome to Project Former! Project Former is a React app for building forms and tracking the form responses. You can build multiple forms, submit responses to the forms and see all submitted responses for each form. 
+
+This app includes:
+- Home page
+- Form builder page
+- Form viewer and form submission page
+- Submission viewer page sorted by form 
+- Delete any form and submission
+
+### Technologies
+
+This project uses React with a json server and was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
+## File Structure
+
+App.js - This component holds the initial fetch requests, all the route paths, and holds the forms and submissions state variables. 
+
+HomePage.js - This component displays the home page
+
+containers - This directory has three components corresponding with the three navigation links to the right of "home".
+
+components - This directory is separated into four sub-directories that contain the navigation components (including the header, footer, and navbar), form builder components, form viewing components, and submissions components. 
+
+## Usage
+
+This is a demo app with no users or login capabilities. 
+
+To build a form, go to "Build" and enter a form name, then click "add a text question", then enter the prompt that you would like to be included in your form. You can click the button to add as many questions as you like. If you add too many questions, you can delete them as necessary. If you do not enter a form name or if you do not add at least one question, you will not be able to save your form. Once your form is created to your liking, click "Save Form".
+
+To view the forms that you've created, click "Forms". From here, you can select the form or delete it.
+
+To submit a response to a form, click "select form" and enter your responses to each question. Click "submit" to submit your responses.
+
+To view the submissions, click "submissions". From here, you can delete any submission. 
+
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm run server`
+
+Starts the json server on port 3001
 
 ### `npm start`
 

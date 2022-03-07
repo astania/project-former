@@ -62,7 +62,7 @@ function App() {
 
         <Switch>
           <Route path="/forms/new">
-            <FormBuilderContainer onAddForm={handleAddForm} forms={forms} />
+            <FormBuilderContainer onAddForm={handleAddForm} />
           </Route>
 
           <Route path="/forms">

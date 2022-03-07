@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Question from "../components/form builders/Question"
 
-const FormBuilderContainer = ({ onAddForm, forms }) => {
+const FormBuilderContainer = ({ onAddForm }) => {
 
     const blankFormTemplate = {
         name: "",
