@@ -14,6 +14,31 @@ This app includes:
 
 This project uses React with a json server and was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### Installation
+
+##Getting Started
+To get a local copy up and running follow these steps below
+
+#Prerequisites
+
+Node Package Manager
+
+running the following command in your terminal will install the latest version of Node Package Manager:
+
+npm install npm@latest -g
+
+
+
+#Installation
+
+Clone the repo - git clone git@github.com:astania/project-former.git
+
+Install NPM packages - npm install
+
+Start the json server - npm run server
+
+Open the app in your browser - npm start
+
 
 ### File Structure
 
