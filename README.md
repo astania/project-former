@@ -1,4 +1,4 @@
-### Project Former
+# Project Former
 
 ### Overview
 Welcome to Project Former! Project Former is a React app for building forms and tracking the form responses. You can build multiple forms, submit responses to the forms and see all submitted responses for each form. 
@@ -15,7 +15,7 @@ This app includes:
 This project uses React with a json server and was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
-## File Structure
+### File Structure
 
 App.js - This component holds the initial fetch requests, all the route paths, and holds the forms and submissions state variables. 
 
@@ -25,7 +25,7 @@ containers - This directory has three components corresponding with the three na
 
 components - This directory is separated into four sub-directories that contain the navigation components (including the header, footer, and navbar), form builder components, form viewing components, and submissions components. 
 
-## Usage
+### Usage
 
 This is a demo app with no users or login capabilities. 
 
