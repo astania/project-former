@@ -16,10 +16,10 @@ This project uses React with a json server and was bootstrapped with [Create Rea
 
 ### Installation
 
-## Getting Started
+### Getting Started
 To get a local copy up and running follow these steps below
 
-# Prerequisites
+### Prerequisites
 
 Node Package Manager
 
@@ -28,8 +28,7 @@ running the following command in your terminal will install the latest version o
 npm install npm@latest -g
 
 
-
-# Installation
+### Installing the app
 
 Clone the repo - git clone git@github.com:astania/project-former.git
 
@@ -61,6 +60,22 @@ To view the forms that you've created, click "Forms". From here, you can select 
 To submit a response to a form, click "select form" and enter your responses to each question. Click "submit" to submit your responses.
 
 To view the submissions, click "submissions". From here, you can delete any submission. 
+
+### Contributions
+Contributions are greatly appreciated.
+
+If you have a suggestion, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement". Don't forget to give the project a star! Thanks again!
+
+#### Fork the Project
+Create your Feature Branch (git checkout -b feature/AmazingFeature)
+Commit your Changes (git commit -m 'Add some AmazingFeature')
+Push to the Branch (git push origin feature/AmazingFeature)
+Open a Pull Request
+
+## Contact
+
+Anna Stania - annaestania@gmail.com
+
 
 
 ## Available Scripts
