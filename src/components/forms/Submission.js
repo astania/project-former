@@ -2,7 +2,6 @@ import { v4 as uuidv4 } from 'uuid'
 import SubmissionResponse from './SubmissionResponse'
 
 function Submission({ sub, submissionsForThisForm, onDeleteSubmission }) {
-    // console.log("this is the sub:", sub)
 
     const responseNumber = submissionsForThisForm.indexOf(sub) + 1
 
