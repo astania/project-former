@@ -7,8 +7,13 @@
   background-color: black;
   width: "90%";
   margin: "5% 0 1%";
-  padding: "1em"
+  padding: "1em";
+  height: 100%;
   
+}
+
+.page {
+  height:70vh;
 }
 
 h1,
@@ -25,8 +30,6 @@ section {
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   height: 100%;
 }
 

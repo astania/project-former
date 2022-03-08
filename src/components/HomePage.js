@@ -1,6 +1,6 @@
 
 const HomePage = () => {
-    return <section>
+    return <section className={"page"}>
 
         <h1>Welcome to Project Former!</h1>
         <p>Project Former allows you to build forms, submit responses and track the responses</p>
