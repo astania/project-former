@@ -10,6 +10,8 @@ This app includes:
 - Submission viewer page sorted by form 
 - Delete any form and submission
 
+![gif](https://imgur.com/wYvCLBB)
+
 ## Technologies
 
 This project uses React with a json server and was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
