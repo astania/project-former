@@ -10,7 +10,7 @@ This app includes:
 - Submission viewer page sorted by form 
 - Delete any form and submission
 
-![gif](https://imgur.com/wYvCLBB)
+![gif](https://imgur.com/wYvCLBB.gif)
 
 ## Technologies
 
