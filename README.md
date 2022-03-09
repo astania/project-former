@@ -8,7 +8,7 @@ This app includes:
 - Form builder page
 - Form viewer and form submission page
 - Submission viewer page sorted by form 
-- Delete any form and submission
+- Delete any form and submission  
 
 ![gif](https://imgur.com/wYvCLBB.gif)
 

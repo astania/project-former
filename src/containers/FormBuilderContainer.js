@@ -19,8 +19,8 @@ const FormBuilderContainer = ({ onAddForm }) => {
     }
 
     const addAQuestion = (e) => {
-
         e.preventDefault()
+        
         setNewForm({
             ...newForm, questions: [...newForm.questions, {
                 type: "text",
